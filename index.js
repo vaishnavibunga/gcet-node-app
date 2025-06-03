@@ -35,7 +35,7 @@ app.get("/products", (req, res) => {
   res.json(products);
 });
 
-const userSchema=mpngoose.Schema({
+const userSchema=mongoose.Schema({
   name: {type: String},
 });
 const user=mongoose.model("User",userSchema);
