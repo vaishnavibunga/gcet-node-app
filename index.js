@@ -1,7 +1,9 @@
 import express from "express";
+import mongoose from "mongoose";
 import cors from "cors";
 const app = express();
 app.listen(8080, () => {
+  mongoose.connect("mongodb://localhost:27017/gcet");
   console.log("Server Started");
 });
 app.use(cors());
@@ -29,6 +31,11 @@ app.get("/products", (req, res) => {
   ];
   res.json(products);
 });
+
+const userSchema=mpngoose.Schema({
+  name: {type: String},
+});
+const user=mongoose.model("User",userSchema);
 
 // import express from "express";
 // import cors from "cors";
