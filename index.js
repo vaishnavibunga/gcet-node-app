@@ -10,7 +10,10 @@ app.use(cors());
 app.get("/", (req, res) => {
   return res.send("Good Morning");
 });
-
+app.get("/register",async (req,res)=>{
+  const result=await user.insetOne({name:"JOHN"});
+  return res.json(result);
+});
 app.get("/greet", (req, res) => {
   res.send("Greetings");
 });
