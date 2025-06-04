@@ -16,4 +16,10 @@ userRouter.post("/login", async (req, res) => {
   return res.json(result);
 });
 
-export default userRouter
+userRouter.gget("/:id",async(req,res)=>{
+    const email=req.params.d;
+    const result=await userModel.findOne({email});
+    return res.json(result);
+});
+
+export default userRouter;
