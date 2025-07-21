@@ -19,7 +19,6 @@ app.use("/orders", orderRouter);
 app.get("/", (_req, res) => {
   res.send("API is running");
 });
-
 mongoose
   .connect(MONGO_URI)
   .then(() => {
